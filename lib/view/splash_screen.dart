@@ -25,9 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
     final session = Supabase.instance.client.auth.currentSession;
     if (session != null) {
       // ✅ User is already logged in
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (_) => const HomePage()),
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const HomePage()),
       );
     } else {
       // ❌ User is not logged in

@@ -8,14 +8,12 @@ class PhoneAuthPage extends StatefulWidget {
   @override
   State<PhoneAuthPage> createState() => _PhoneAuthPageState();
 }
-
 class _PhoneAuthPageState extends State<PhoneAuthPage> {
   final phoneController = TextEditingController();
   final otpController = TextEditingController();
 
   Future<void> sendOtp() async {
     final phone = '+91' + phoneController.text.trim();
-
     try {
       await supabase.auth.signInWithOtp(phone: phone);
       ScaffoldMessenger.of(context).showSnackBar(
